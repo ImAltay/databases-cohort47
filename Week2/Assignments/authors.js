@@ -18,7 +18,7 @@ connection.query(
 );
 
 connection.query(
-  `ALTER TABLE authors ADD COLUMN mentor INT, ADD FOREIGN KEY (mentor) REFERENCES authors(author_id)`
+  `ALTER TABLE authors ADD COLUMN mentor_id INT, ADD FOREIGN KEY (mentor_id) REFERENCES authors(author_id)`
 );
 
 connection.end();
