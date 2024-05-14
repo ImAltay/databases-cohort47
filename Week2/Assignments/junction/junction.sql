@@ -12,3 +12,10 @@ INSERT INTO junction_author_paper (author_id, paper_id) VALUES (5, 28);
 INSERT INTO junction_author_paper (author_id, paper_id) VALUES (6, 30);
 INSERT INTO junction_author_paper (author_id, paper_id) VALUES (7, 1);
 INSERT INTO junction_author_paper (author_id, paper_id) VALUES (14, 5);
+
+INSERT INTO junction_author_paper (author_id, paper_id) VALUES (12, 2);
+INSERT INTO junction_author_paper (author_id, paper_id) VALUES (12, 7);
+INSERT INTO junction_author_paper (author_id, paper_id) VALUES (12, 1);
+
+INSERT INTO junction_author_paper (author_id, paper_id) VALUES (9, 9);
+INSERT INTO junction_author_paper (author_id, paper_id) VALUES (9, 1);
