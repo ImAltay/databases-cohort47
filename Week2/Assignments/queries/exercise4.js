@@ -47,10 +47,16 @@ connection.query(
 );
 
 // 3.4.4 Sum of the research papers of the authors per university.
-// connection.query('  ', function (error) {
-//   if (error) throw error;
-//   console.log('Sum of the research papers of the authors per university: \n' ,results);
-// });
+connection.query(
+  'SELECT authors.university, COUNT(research_papers.paper_title) FROM authors JOIN junction_author_paper ON authors.author_id = junction_author_paper.author_id JOIN research_papers ON research_papers.paper_id = junction_author_paper.paper_id GROUP BY authors.university;',
+  function (error, results) {
+    if (error) throw error;
+    console.log(
+      'Sum of the research papers of the authors per university: \n',
+      results
+    );
+  }
+);
 
 // 3.4.5 Minimum and maximum of the h-index of all authors per university.
 connection.query(
