@@ -12,7 +12,7 @@ connection.connect();
 
 connection.query(
   'CREATE TABLE authors (author_id INT AUTO_INCREMENT, author_name VARCHAR(100), university VARCHAR(100), date_of_birth DATE, h_index INT, gender VARCHAR(20), PRIMARY KEY(author_id));',
-  function (error, results, fields) {
+  function (error) {
     if (error) throw error;
     console.log('Authors table has been created');
   }
