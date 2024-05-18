@@ -1,0 +1,14 @@
+Exercise
+Q: Was your database already in 2NF / 3 NF?
+A: Yes
+
+
+Q: What changes did you have to do to normalize your database?
+A: Nothing but turns out my diagram was outdated and I had one mistake recipes.sql so I fixed them
+
+
+Discussion
+
+Q: If you want to add thousands of recipes to your database, what challenges do you foresee?
+A: I guess actually making the connections on junction tables but if there is a proper front end app it shouldn't be a big problem?
+   I think for recipes app I would have rather nosql and ingredients array.  

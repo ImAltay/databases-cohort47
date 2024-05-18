@@ -27,7 +27,8 @@ CREATE TABLE `recipe_ingredient` (
   `ingredient_id` INT,
   `measurement` varchar(255),
   FOREIGN KEY(`recipe_id`) REFERENCES `recipes`(`recipe_id`),
-  FOREIGN KEY(`ingredient_id`) REFERENCES `ingredients`(`ingredient_id`)
+  FOREIGN KEY(`ingredient_id`) REFERENCES `ingredients`(`ingredient_id`),
+  PRIMARY KEY(`recipe_id`, `ingredient_id`)
 );
 
 CREATE TABLE `steps` (
@@ -41,6 +42,6 @@ CREATE TABLE `recipe_step` (
   `step_no` INT NOT NULL,
   FOREIGN KEY(`recipe_id`) REFERENCES `recipes`(`recipe_id`),
   FOREIGN KEY(`step_id`) REFERENCES `steps`(`step_id`),
-  PRIMARY KEY(`step_no`, `recipe_id` )
+  PRIMARY KEY(`step_id`, `recipe_id` )
 );
 
