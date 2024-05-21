@@ -17,7 +17,7 @@ connection.query(
 );
 
 connection.query(
-  'CREATE TABLE IF NOT EXISTS account_changes(change_number INTEGER UNIQUE , account_number INTEGER NOT NULL, amount INTEGER NOT NULL, changed_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP, remark VARCHAR(255), PRIMARY KEY (change_number), FOREIGN KEY(`account_number`) REFERENCES account(`account_number`)) ',
+  'CREATE TABLE IF NOT EXISTS account_changes(change_number INTEGER AUTO_INCREMENT , account_number INTEGER NOT NULL, amount INTEGER NOT NULL, changed_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP, remark VARCHAR(255), PRIMARY KEY (change_number), FOREIGN KEY(`account_number`) REFERENCES account(`account_number`)) ',
   function (error, results) {
     if (error) throw error;
     console.log('account_changes table has been created');

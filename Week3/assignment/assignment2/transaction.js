@@ -6,11 +6,29 @@ var connection = mysql.createConnection({
   database: 'hyfw3',
 });
 
-connection.connect();
+async function transferMoney(fromAccountNumber, toAccountNumber, amount) {
+  await connection.beginTransaction();
+  await connection.query(
+    `UPDATE account SET balance = balance - ${amount} WHERE account_number = ${fromAccountNumber}`
+  );
+  await connection.query(
+    `UPDATE account SET balance = balance + ${amount} WHERE account_number = ${toAccountNumber}`
+  );
+  await connection.query(
+    `INSERT INTO account_changes(account_number, amount, remark) VALUES (${fromAccountNumber}, -${amount}, "${fromAccountNumber} sent ${amount}"),( ${toAccountNumber}, ${amount}, "${toAccountNumber} received ${amount}")`
+  );
 
-connection.query('', (err, result) => {
-  if (err) throw err;
-  console.log('transaction complete!');
-});
+  await connection.commit();
 
-connection.end();
+  console.log(
+    `transaction complete! ${fromAccountNumber} sent ${amount} to ${toAccountNumber}`
+  );
+}
+
+async function main() {
+  connection.connect();
+  await transferMoney(101, 102, 1000);
+  connection.end();
+}
+
+main();
