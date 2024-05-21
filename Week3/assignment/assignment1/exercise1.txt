@@ -1,0 +1,15 @@
+
+
+Q: What columns violate 1NF?
+A: 
+    -food_code, food_description (each column should have single value)
+    - dinner_date (Mixing data types within the same column is not permitted)
+    - Having a table without a primary key is not permitted. I am not quite sure if there is a primary key in this table. member_id + dinner_id could be a composite primary key since same member cant be on the same dinner twice.
+
+
+Q: What entities do you recognize that could be extracted?
+A: If I understand what entities are correctly, every row (a dinner) is a entity
+
+
+Q: Name all the tables and columns that would make a 3NF compliant solution.
+A: Food_description depends on food_code, venue description depends on venue_code instead of primary key. I did not understand the question very well but personally I would separate members, dinners, venues, and foods into different table.
