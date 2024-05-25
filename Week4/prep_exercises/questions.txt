@@ -1,0 +1,14 @@
+What are the collections?
+    A collection is the equivalent of a table in a relational database system
+
+What information will you embed in a document and which will you store normalised?
+
+    I will embed ingredients and steps in an array. only one collection. 
+
+What made you decide when to embed information? What assumptions did you make?
+    I believe this way I give more freedom to user. instead of ketchup maybe they would like to write heinz ketchup.
+
+If you were given MySQL and MongoDB as choices to build the recipe's database at the beginning, which one would you
+choose and why?
+
+    I think for this task noSQL is better. there is a limited amount of information.
