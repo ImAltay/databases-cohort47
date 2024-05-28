@@ -14,6 +14,12 @@ export const dummyData = [
         changed_date: new Date(),
         remark: '102 sent 500',
       },
+      {
+        change_number: 2,
+        amount: 0,
+        changed_date: new Date(),
+        remark: '102 sent 0',
+      },
     ],
   },
   {
